@@ -1,3 +1,21 @@
+/*External Stylling =
 p{
     color: #e22b3a;
 }
+#abc
+{
+    font-size: large;
+    font-weight: 500;
+    color:blue;
+}
+.def{
+    border: 1px solid salmon;
+}*/
+.abc,.xyz
+{
+    border:2px solid black;
+    width: 30%;
+    margin: 10px;
+    padding-left: 10px;
+}
+
