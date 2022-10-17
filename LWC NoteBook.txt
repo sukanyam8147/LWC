@@ -1,0 +1,170 @@
+Lightning Component FrameWork:
+------------------------------------------
+
+Lightning Component Framework is UI Framework for developing single page application for mobile and desktop devices.
+
+we can use two model for creating lightning pages.
+
+1.LWC Model(using lwc framework)
+2.Aura component  model(using aura framework).
+
+1.LWC Model(using lwc framework):
+--------------------------------------------
+LWC is a new programming model to develop salesforce lightning component.so Lightning component previously could be develop using aura component framework.now we have new model or new framework develop the same lightning component.The lWC framework comes with lot of different advantages over aura framework like they are design to give better performance because most of  the code that will write is being understood by ur negative webbrowser itself all the keys that we need to create a component are part of your negative webbrowser engine you dont need think framework layer to create this components.
+
+Benefits:
+----------
+1.Lightweight framework
+2.Better performance
+3.interoperability with aura component(its means we can embeded (call) inside aura component).
+4.Better testing using jest
+5.Better security
+
+
+Lets see how the web start to evalueate in 2014.In 2014  the browser was handling very minimal web standrad things like event,EcmaScript 5,rendering,standard elements  remaining all things take care of framework.if  framework taking care of more responsibility  then websites won't perform efficiently.as  web start evaluating  in 2019 where the javascript come up the new features and its reduce the effect of framework and taking care hole load of the browser.its introduce many cool features in the browser instead of using framework we can use dircetly in the javascript the cool features are web component,Templates, they introduce the Custom Elements,Shadow Dom,Modules,Event,they introduce differenet version javascript EcmaScript 6,EcmaScript 7,EcmaScript 8,EcmaScript 9,EcmaScript 10,Ecmascript 11 and they introduce rendering,standard elements this all things taken care by the browser we no need to run frame on it. and they only keep specific things with framework like specialized service,Data services,UI Components this things was taking care of the framework.So Salesforce saw this transformation that happends from 2014 to 2019 they introduce lightning web component that was build on latest web stands that was introduce 2019 they fallow same concept like lightning web component framework take care only security,Lightning Data Services,Base Lightning Components rest all things take care by the browser that is web browser thats why LWC components comes into the picture in 2019.
+
+Difference Betwen Aura/LWC:
+------------------------------------
+aura is older framework that was build in ES 5 version.it is not modern features was not available,rendering wasnt optimized.we have to write to tomuch code to acheiving functionality.But lightning web component use the latest features of web standard.it is performance efficient,rendering is very preety cool.
+
+aura build using the EcmaScript 5 javascript version.That framework was to much code to write.Rendering wont optimized because of  it was using older framework.
+
+
+salesforce developer DX:
+-------------------------------
+For setup salesforce developer DX(salesforce developmemt experience) environment we neeed to install VS Code ,salesforce extension pack,salesforce CLI
+
+What Is My Domain? Showcase your company's brand with your My Domain name. That My Domain name is used as your org-specific subdomain in Salesforce login and application URLs. For example, https://mycompany.my.salesforce.com and https://mycompany.my.site.com .
+
+
+Interview Questions:
+____________________
+1.What is Lightning Web Component ?
+
+Lightning web components are custom HTML elements built using HTML and modern JavaScript.Lightning web component uses core web standards and provides only what’s necessary to perform well in the browser supported by Salesforce.
+Since it’s built on the code that runs natively on browser, lightning component is lightweight and exceptionally delivers the performance.Most of the code you write is in the standard HTML and JavaScript.
+
+2.What was the need Lightning Web Component ?
+
+aura component launced around 2014 and at that time webstacks or  webstands are not developed  there are not capability enough to provide all the features needed by the full stack developer.so A lot of frameworks came into picture to fill this void created by the browser capabilities for example we had angular js,we had react or  aura also right.This are frameworks came into picture to fill this void created by the browser capabilities.he web start to evalueate in 2014.  In 2014  the browser was handling very minimal web standrad things like events,EcmaScript 5,rendering,standard elements  remaining all things take care of framework.if  framework taking care of more responsibility  then websites won't perform efficiently. as  web start evaluating  in 2019 where the javascript come up the new features and its reduce the effect of framework and taking care hole load of the browser.its introduce many cool features in the browser instead of using framework we can use dircetly in the javascript the cool features are web component,Templates, they introduce the Custom Elements,Shadow Dom,Modules,Event,they introduce differenet version javascript EcmaScript 6,EcmaScript 7,EcmaScript 8,EcmaScript 9,EcmaScript 10,Ecmascript 11 and they introduce rendering,standard elements this all things taken care by the browser we no need to run frame on it. and they only keep specific things with framework like specialized service,Data services,UI Components this things was taking care of the framework.So Salesforce saw this transformation that happends from 2014 to 2019 they introduce lightning web component that was build on latest web stands that was introduce 2019 they fallow same concept like lightning web component framework take care only security,Lightning Data Services,Base Lightning Components rest all things take care by the browser that is web browser thats why LWC components comes into the picture in 2019.
+
+3.Difference Betwen Aura/LWC:
+------------------------------------
+aura is older framework that was build in ES 5 version.it is not modern features was not available,rendering wasnt optimized.we have to write to tomuch code to acheiving functionality.But lightning web component use the latest features of web standard.it is performance efficient,rendering is very preety cool.
+
+4.Benefits:
+----------
+1.Lightweight framework
+2.Better performance
+3.interoperability with aura component(its means we can embeded (call) inside aura component).
+4.Better testing using jest
+5.Better security
+
+5.Can we use LWC inside Aura and Vice-Versa?
+
+we can embed the LWC components into Aura Components and Visualforce Pages. However, the vice-versa is not possible. We cannot embed Aura Components and Visualforce components into Lighting Web Components.
+
+6.What are life Cycle Hooks in LWC?
+A lifecycle hook is a callback method triggered at a specific phase of a component instance’s lifecycle. There are a number of life cycle hook methods available, we are going to discuss them one by one.
+
+CONSTRUCTOR()
+Constructor is invoked when the component is created. It is similar to init method in aura component. Only difference here is that flow is from parent to child as opposite to that of init where the child component’s init is called first and then the parent component’s init gets called.
+Since flow is from parent to child, do not access child elements in the component body because they don’t exist yet.
+Also, do not access the element’s public properties , because they’re set after the component is created.
+The constructor method’s first statement has to be super. It has to be a call to a super method with no parameters. Why it is required ? so that it can assign the proper prototype and value to “this” attribute.
+CONNECTEDCALLBACK()
+Connectedcallback is Invoked when the component is inserted into DOM. That means whenever a component is created constructor is in invoked and whenever that component is inserted into Dom connected callback is invoked.
+Since  flow is from parent to child, do not access child elements in the component body because they don’t exist yet.
+We can access the Parent elements and modify them in this hook.
+DISCONNECTEDCALLBACK()
+disconnectedCallback is invoked when component is removed from DOM.
+This hook flows from parent to child.
+render()
+
+This hook is used to override the standard rendering functionality.
+It gets called after connectedCallback() and it returns a valid HTML temaplate.
+This hook flows from parent to child.
+RENDEREDCALLBACK()
+This hook is Called after component is rendered.
+This hook flows from child to parent.
+errorCallback(error, stack)
+
+• This hook is called when the component throws an error in one of its hooks.
+
+• The Error argument is a JavaScript native error object and the stack argument is a string.
+
+• This method works like a JavaScript catch{} block for catching errors.
+
+We will created two components lifecyclehooks and lifecycleChild and add above methods one by one.
+
+lifecyclehooks.html
+
+<template>
+    <div>Inside Template 1</div>
+    <c-lifecycle-child></c-lifecycle-child>
+</template>
+lifecyclehooks.js
+
+import { LightningElement, api } from 'lwc';
+import firsttemplate from './lifecyclehooks.html';
+import secondtemplate from './lifecyclehooks2.html';
+export default class Lifecyclehooks extends LightningElement {
+@api templateno = 'temp1';
+    constructor(){
+        super();
+        console.log('Inside constructor');
+    }
+    connectedCallback()
+    {
+        console.log('Inside connected callback');
+    }
+    disconnectedCallback(){
+        console.log('Inside disconnected callback');
+    }
+    render()
+    {
+        console.log('Inside render');
+        if(this.templateno==='temp1')
+        return firsttemplate;
+        else return secondtemplate;
+    }
+    renderedCallback(){
+        console.log('insiderender callback');
+    }
+    errorCallback(error, stack)
+    {
+        console.log('error callback'+error);
+
+    }
+}
+lifecycleChild.html
+
+<template> 
+</template>
+lifecycleChild.html
+
+import { LightningElement } from 'lwc';
+
+export default class LifecycleChild extends LightningElement {
+    connectedCallback() {
+        throw new Error('Whoops!');
+   }
+}
+We will add lifecyclehooks inside aura application and load the application. Notice the console log statements and observe the order in which each life cycle hooks gets executed.
+
+
+Also, we have added the child component “lifecycleChild” to throw error from it, which is getting caught by lifecyclehooks component using errorCallback.
+
+
+
+There are three majorly use decorators in lightning web components:
+
+@api
+@api decorators is used to make properties or methods in lightning web component public this way they are accessible outside of the component in which they are declared. For example a parent component can set the value of a property in a child component
+
+@track
+@track decorator is basically used to make properties or a method
+private in lightning web components this property is not accessible outside of lightning that component when in which it is declared
+
+@wire
+@wire is basically used to read the Salesforce data from apex class into lightning web component. It is generally used while making a server calls to apex class .
